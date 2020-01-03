@@ -1,0 +1,3 @@
+<!--pages/movie/movie.wxml-->
+<van-button type="danger">危险按钮</van-button>
+<van-button loading type="info" loading-text="加载中..." />
