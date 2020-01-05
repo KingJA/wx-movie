@@ -1,3 +1,16 @@
-<!--pages/movie/movie.wxml-->
-<van-button type="danger">危险按钮</van-button>
-<van-button loading type="info" loading-text="加载中..." />
+<view class="movie" wx:for="{{movieList}}" wx:key="index">
+  <image src="{{item.images.small}}" class="movie-img"></image>
+  <view class="movie-info">
+    <view class="movie-title">{{item.title}}</view>
+    <view>
+      <text class="movie-score">观众评分：{{item.rating.average}}分</text>
+    </view>
+    <view>主演：<text wx:for="{{item.casts}}" wx:key="index" class="movie-name"> {{item.name}} </text>
+    </view>
+    <view>年份：{{item.year}}</view>
+  </view>
+
+
+  <button class="movie-comment" data-movieid="{{item.id}}" bindtap="gotoComment"> 评价</button>
+
+</view>
